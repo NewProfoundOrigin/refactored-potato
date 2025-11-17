@@ -10,5 +10,5 @@ name = "javascript"
     "nodejs"
   ]
 
-[[code-formatters]]
+[[code_formatters]]
 name = "standardjs"
