@@ -1,6 +1,9 @@
 version = 1
 
 [[analyzers]]
+name = "secrets"
+
+[[analyzers]]
 name = "javascript"
 
   [analyzers.meta]
@@ -9,6 +12,3 @@ name = "javascript"
     "browser",
     "nodejs"
   ]
-
-[[code_formatters]]
-name = "standardjs"
