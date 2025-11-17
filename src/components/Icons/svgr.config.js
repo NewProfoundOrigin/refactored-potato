@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const template = require('./svgr.template');
+const template = require('./svgr.template')
 
 module.exports = {
   icon: true,
@@ -13,5 +13,5 @@ module.exports = {
   // It is ok to disable it here, every generated file is tracked
   // with git and will be formated on push thanks to lint-staged + prettier
   // See https://github.com/gregberge/svgr/issues/893 for details on the underlying issue
-  prettier: false,
-};
+  prettier: false
+}
