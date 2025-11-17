@@ -12,3 +12,6 @@ name = "javascript"
     "browser",
     "nodejs"
   ]
+
+[[code_formatters]]
+name = "standardjs"
