@@ -1,7 +1,7 @@
 /* eslint-disable no-process-env */
 // @ts-check
-import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+import { createEnv } from '@t3-oss/env-nextjs'
+import { z } from 'zod'
 
 export const env = createEnv({
   /**
@@ -29,7 +29,7 @@ export const env = createEnv({
     LOGGER_PRETTY: z
       .enum(['true', 'false'])
       .default(process.env.NODE_ENV === 'production' ? 'false' : 'true')
-      .transform((value) => value === 'true'),
+      .transform((value) => value === 'true')
   },
 
   /**
@@ -68,7 +68,7 @@ export const env = createEnv({
           value ??
           (process.env.NODE_ENV === 'development' ? 'warning' : 'success')
       ),
-    NEXT_PUBLIC_NODE_ENV: zNodeEnv(),
+    NEXT_PUBLIC_NODE_ENV: zNodeEnv()
   },
 
   /**
@@ -99,20 +99,20 @@ export const env = createEnv({
     NEXT_PUBLIC_ENV_NAME: process.env.NEXT_PUBLIC_ENV_NAME,
     NEXT_PUBLIC_ENV_EMOJI: process.env.NEXT_PUBLIC_ENV_EMOJI,
     NEXT_PUBLIC_IS_DEMO: process.env.NEXT_PUBLIC_IS_DEMO,
-    NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
    * useful for Docker builds.
    */
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
-});
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION
+})
 
-function zNodeEnv() {
-  return z.enum(['development', 'test', 'production']).default('development');
+function zNodeEnv () {
+  return z.enum(['development', 'test', 'production']).default('development')
 }
 
-function zOptionalWithReplaceMe() {
+function zOptionalWithReplaceMe () {
   return z
     .string()
     .optional()
@@ -121,8 +121,8 @@ function zOptionalWithReplaceMe() {
         // Check in prodution if the value is not REPLACE ME
         process.env.NODE_ENV !== 'production' || value !== 'REPLACE ME',
       {
-        message: 'Update the value "REPLACE ME" or remove the variable',
+        message: 'Update the value "REPLACE ME" or remove the variable'
       }
     )
-    .transform((value) => (value === 'REPLACE ME' ? undefined : value));
+    .transform((value) => (value === 'REPLACE ME' ? undefined : value))
 }
