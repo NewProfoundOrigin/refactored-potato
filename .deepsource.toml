@@ -1,17 +1,9 @@
 version = 1
 
 [[analyzers]]
-name = "secrets"
-
-[[analyzers]]
 name = "javascript"
-
-  [analyzers.meta]
-  plugins = ["vue"]
-  environment = [
-    "browser",
-    "nodejs"
-  ]
+enabled = true
 
 [[code_formatters]]
 name = "standardjs"
+enabled = true
