@@ -1,19 +1,19 @@
 // File to trigger DeepSource issues for inline comment testing
 
-var x = 1
-var y = 2
-var z = 3
+const x = 1
+const y = 2
+const z = 3
 
-function unusedFunction() {
-  console.log("hello")
-  var unused = 42
+function unusedFunction () {
+  console.log('hello')
+  const unused = 42
   eval("alert('test')")
-  if (x == "1") {
+  if (x == '1') {
     console.log(x)
   }
 }
 
 try {
-  JSON.parse("{}")
+  JSON.parse('{}')
 } catch (e) {
 }
