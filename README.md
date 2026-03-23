@@ -194,3 +194,6 @@ docker build -t start-ui-web .
 docker run -p 80:3000 start-ui-web
 ```
 Application will be exposed on port 80 ([http://localhost](http://localhost))
+
+## Test
+Dummy change to trigger DeepSource analysis and verify inline PR comments.
