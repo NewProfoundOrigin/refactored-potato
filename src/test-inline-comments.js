@@ -17,3 +17,4 @@ try {
   JSON.parse('{}')
 } catch (e) {
 }
+// triggered re-run
