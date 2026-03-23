@@ -2,24 +2,24 @@
 // Contains issues of varying severity levels
 
 // Critical: eval usage (security)
-function executeCode(input) {
+function executeCode (input) {
   return eval(input)
 }
 
 // Major: console.log in production code
-function processData(data) {
-  console.log("Processing:", data)
-  var result = []
-  for (var i = 0; i < data.length; i++) {
+function processData (data) {
+  console.log('Processing:', data)
+  const result = []
+  for (let i = 0; i < data.length; i++) {
     result.push(data[i] * 2)
   }
   return result
 }
 
 // Minor: unused variables
-function calculateTotal(items) {
-  var unused = "this is never used"
-  var alsoUnused = 42
+function calculateTotal (items) {
+  const unused = 'this is never used'
+  const alsoUnused = 42
   let total = 0
   for (let i = 0; i < items.length; i++) {
     total += items[i].price
@@ -28,17 +28,17 @@ function calculateTotal(items) {
 }
 
 // Security: SQL-like string concatenation
-function getUser(userId) {
-  var query = "SELECT * FROM users WHERE id = " + userId
+function getUser (userId) {
+  const query = 'SELECT * FROM users WHERE id = ' + userId
   return query
 }
 
 // Anti-pattern: nested callbacks
-function fetchAllData(callback) {
-  fetch("/api/users").then(function(res) {
-    res.json().then(function(users) {
-      fetch("/api/orders").then(function(res2) {
-        res2.json().then(function(orders) {
+function fetchAllData (callback) {
+  fetch('/api/users').then(function (res) {
+    res.json().then(function (users) {
+      fetch('/api/orders').then(function (res2) {
+        res2.json().then(function (orders) {
           callback(users, orders)
         })
       })
@@ -47,7 +47,7 @@ function fetchAllData(callback) {
 }
 
 // Type coercion issues
-function compare(a, b) {
+function compare (a, b) {
   if (a == null) {
     return false
   }
@@ -58,14 +58,14 @@ function compare(a, b) {
 }
 
 // Reassigning function parameters
-function transform(config) {
+function transform (config) {
   config = Object.assign({}, config, { modified: true })
   return config
 }
 
 // Missing error handling
-async function riskyOperation() {
-  const response = await fetch("/api/data")
+async function riskyOperation () {
+  const response = await fetch('/api/data')
   const data = await response.json()
   return data.results.map(item => item.value)
 }
